@@ -8,6 +8,8 @@ import helmet from "helmet";
 import morgan from "morgan";
 import path, { dirname } from "path";
 import { fileURLToPath } from "url";
+import authRoutes from "./routes/auth.js"
+import { register } from "./Controller/auth.js"
 
 /* CONFIG */
 const __filename = fileURLToPath (import .meta.url);
