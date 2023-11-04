@@ -26,4 +26,23 @@ export const createPost = async (req, res) => {
         res.status(409).json({ message: error.message })
     }
 };
+
 /* READ */
+export const getFeedPosts = async (req, res) => {
+    try {
+        const { userId } = req.params;
+        const post = await Post.find({userId});
+        res.status(200).json(post);
+    } catch (error) {
+        res.status(404).json({ message:error.message })
+    }
+}
+
+/* Update */
+export const likePost = async (req, res) => {
+    try {
+
+    } catch (error) {
+        res.status(404).json({message: error.message})
+    }
+}
