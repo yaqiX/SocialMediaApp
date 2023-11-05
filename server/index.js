@@ -12,7 +12,7 @@ import authRoutes from "./routes/auth.js";
 import userRoutes from "./routes/users.js";
 import postRoutes from "./routes/posts.js";
 import { register } from "./Controller/auth.js";
-import { createPost } from "./routes/post.js";
+import { createPost } from "./Controller/posts.js";
 import { verifyToken } from "./middleware/auth.js";
 import User from "./models/User.js";
 import Post from "./models/Post.js";
@@ -70,8 +70,8 @@ mongoose
   .then(() => {
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
     /* ADD DATA ONE TIME */
-    // User.insertMany(users);
-    // Post.insertMany(posts);
+    User.insertMany(users);
+    Post.insertMany(posts);
   })
   .catch((error) => console.log(`${error} did not connect`));
 
