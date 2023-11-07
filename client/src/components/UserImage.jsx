@@ -9,7 +9,7 @@ const UserImage = ({image, size="60px"}) => {
                 style={{objectFit:"cover", borderRadius:"50%"}}
                 width={size} height={size}
                 alt="user image"
-                src={`http://localhost:${process.env.PORT}/assets/${image}`}
+                src={`http://localhost:3001/assets/${image}`}
             />
         </Box>
     )
