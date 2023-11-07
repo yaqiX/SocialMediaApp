@@ -21,8 +21,8 @@ const App = () => {
           <CssBaseline />
           <Routes>
             <Route path="/" element={<LoginPage />}/>
-            <Route path="/home" element={<HomePage />}/>
-            <Route path="/profile/:userId" element={<ProfilePage />}/>
+            <Route path="/home" element={isAuth ? <HomePage /> : <Navigate to="/"></Navigate>}/>
+            <Route path="/profile/:userId" element={isAuth ? <ProfilePage /> : <Navigate to="/"></Navigate>}/>
           </Routes>
         </ThemeProvider>
       </BrowserRouter>
