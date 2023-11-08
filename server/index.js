@@ -29,10 +29,12 @@ const app = express();
 app.use(express.json());
 app.use(helmet());
 app.use(helmet.crossOriginResourcePolicy({policy: "cross-origin"}));
-app.use(morgan("common"));
+app.use(morgan('dev'));
 app.use(bodyParser.json({limit:"30mb", extended: true}));
 app.use(bodyParser.urlencoded({limit:"30mb", extended: true}));
-app.use(cors());
+app.use(cors({
+  origin: "*"
+}));
 app.get("/",(req,res)=>{
   res.setHeader("Access-Control-Allow-Credentials","true")
   res.send("API is running")
@@ -74,8 +76,8 @@ mongoose
   .then(() => {
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
     /* ADD DATA ONE TIME */
-    User.insertMany(users);
-    Post.insertMany(posts);
+    // User.insertMany(users);
+    // Post.insertMany(posts);
   })
   .catch((error) => console.log(`${error} did not connect`));
 
