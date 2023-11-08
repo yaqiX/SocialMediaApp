@@ -28,4 +28,4 @@ Welcome to the Social Media Platform project! This platform allows users to regi
   - MongoDB: A NoSQL database for storing and managing data.
 
 ## Screenshots
-![Screenshot 1](./client/assets/screenshots/1.png)
+![Screenshot 1](./client/public/assets/screenshots/1.png)
